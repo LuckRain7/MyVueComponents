@@ -1,7 +1,9 @@
 {
-  "name": "quickcreatevue",
+  "name": "MyVueComponents",
   "version": "0.1.0",
   "private": true,
+  "author": "LuckRain7 (https://github.com/LuckRain7)",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
