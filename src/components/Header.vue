@@ -15,8 +15,7 @@
         <!-- 我的组件 -->
         <el-submenu index="2" class="nav-menu-item">
           <template slot="title">我的组件</template>
-          <el-menu-item index="/1">选项1</el-menu-item>
-          <el-menu-item index="/2">选项1</el-menu-item>
+          <el-menu-item index="/Sidebar">侧边栏</el-menu-item>
         </el-submenu>
       </el-menu>
     </div>
@@ -39,6 +38,11 @@ export default {
     },
     getRoutePath() {
       this.activeIndex = this.$route.path;
+    }
+  },
+  watch:{
+    $route:function(to){
+      this.activeIndex = to.path;
     }
   }
 };
