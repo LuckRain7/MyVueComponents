@@ -13,7 +13,11 @@ const routes = [
     path: "/Sidebar",
     name: "Sidebar",
     component: () => import("../views/Sidebar/index.vue")
-  }
+  },  {
+    path: "/ToolBox",
+    name: "ToolBox",
+    component: () => import("../views/ToolBox/index.vue")
+  },
 ];
 
 const router = new VueRouter({

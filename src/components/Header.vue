@@ -16,6 +16,7 @@
         <el-submenu index="2" class="nav-menu-item">
           <template slot="title">我的组件</template>
           <el-menu-item index="/Sidebar">侧边栏</el-menu-item>
+          <el-menu-item index="/ToolBox">工具弹窗</el-menu-item>
         </el-submenu>
       </el-menu>
     </div>
