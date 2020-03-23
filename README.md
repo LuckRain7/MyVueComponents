@@ -1,4 +1,4 @@
-# MyVueComponents
+# 基于Vue的一些小组件的集合
 
 基于Vue、Element-UI封装的一些小组件
 
