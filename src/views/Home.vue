@@ -3,33 +3,23 @@
     <div class="title center">平时自己用到的小组件</div>
     <div class="content center">
       <template v-for="item in render">
-        <router-link :to="item.to" tag="span" :key="item.to">
-          - {{ item.title }}
-        </router-link>
+        <router-link :to="item.to" tag="span" :key="item.to"> - {{ item.title }} </router-link>
       </template>
     </div>
   </div>
 </template>
 
 <script>
+import config from '../config'
 export default {
-  name: "Home",
+  name: 'Home',
   data() {
     return {
-      render: [
-        {
-          title: "侧边栏",
-          to: "/Sidebar"
-        },
-        {
-          title: "工具弹窗",
-          to: "/ToolBox"
-        }
-      ]
-    };
+      render: config,
+    }
   },
-  components: {}
-};
+  components: {},
+}
 </script>
 <style lang="scss">
 .Home {

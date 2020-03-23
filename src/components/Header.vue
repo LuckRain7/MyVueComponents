@@ -5,18 +5,15 @@
     </div>
     <!-- 导航菜单 -->
     <div class="nav-menu">
-      <el-menu
-        :default-active="activeIndex"
-        mode="horizontal"
-        @select="handleSelect"
-      >
+      <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
         <!-- home -->
         <el-menu-item index="/" class="nav-menu-item">Home</el-menu-item>
         <!-- 我的组件 -->
         <el-submenu index="2" class="nav-menu-item">
           <template slot="title">我的组件</template>
-          <el-menu-item index="/Sidebar">侧边栏</el-menu-item>
-          <el-menu-item index="/ToolBox">工具弹窗</el-menu-item>
+          <template v-for="(item, index) in render">
+            <el-menu-item :key="index" :index="item.to">{{ item.title }}</el-menu-item>
+          </template>
         </el-submenu>
       </el-menu>
     </div>
@@ -24,29 +21,31 @@
 </template>
 
 <script>
+import config from '../config'
 export default {
   data() {
     return {
-      activeIndex: "/"
-    };
+      activeIndex: '/',
+      render: config,
+    }
   },
   mounted() {
-    this.getRoutePath();
+    this.getRoutePath()
   },
   methods: {
     handleSelect(key) {
-      this.$router.push(key);
+      this.$router.push(key)
     },
     getRoutePath() {
-      this.activeIndex = this.$route.path;
-    }
+      this.activeIndex = this.$route.path
+    },
   },
-  watch:{
-    $route:function(to){
-      this.activeIndex = to.path;
-    }
-  }
-};
+  watch: {
+    $route: function(to) {
+      this.activeIndex = to.path
+    },
+  },
+}
 </script>
 
 <style lang="scss">

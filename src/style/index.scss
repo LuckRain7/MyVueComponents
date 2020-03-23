@@ -1,0 +1,47 @@
+// 公共样式
+.ml20 {
+  margin-left: 20px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.tac {
+  text-align: center;
+}
+
+// -----------
+.Sidebar-state {
+  color: #696969;
+  margin-left: 30px;
+  margin-top: 30px;
+  .title {
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+  }
+  li {
+    height: 40px;
+    line-height: 40px;
+  }
+  strong {
+    margin: 0 6px;
+  }
+}
+
+.introduce {
+  color: #696969;
+  margin-left: 30px;
+  margin-top: 30px;
+  .title {
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+  }
+  li {
+    height: 40px;
+    line-height: 40px;
+  }
+  strong {
+    margin: 0 6px;
+  }
+}
