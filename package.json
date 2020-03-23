@@ -5,10 +5,11 @@
   "author": "LuckRain7 (https://github.com/LuckRain7)",
   "license": "MIT",
   "scripts": {
+    "dev": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "git":"git push gitee && git push github"
+    "git": "git push gitee && git push github"
   },
   "dependencies": {
     "axios": "^0.19.0",
