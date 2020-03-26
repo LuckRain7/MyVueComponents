@@ -1,33 +1,38 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: () => import("../views/Home.vue")
+    path: '/',
+    name: 'Home',
+    component: () => import('../views/Home.vue'),
   },
   {
-    path: "/Sidebar",
-    name: "Sidebar",
-    component: () => import("../views/Sidebar/index.vue")
+    path: '/Sidebar',
+    name: 'Sidebar',
+    component: () => import('../views/Sidebar/index.vue'),
   },
   {
-    path: "/ChooseCard",
-    name: "ChooseCard",
-    component: () => import("../views/ChooseCard/index.vue")
+    path: '/ChooseCard',
+    name: 'ChooseCard',
+    component: () => import('../views/ChooseCard/index.vue'),
   },
   {
-    path: "/ToolBox",
-    name: "ToolBox",
-    component: () => import("../views/ToolBox/index.vue")
-  }
-];
+    path: '/ToolBox',
+    name: 'ToolBox',
+    component: () => import('../views/ToolBox/index.vue'),
+  },
+  {
+    path: '/Pop-up',
+    name: 'Pop-up',
+    component: () => import('../views/Pop-up/index.vue'),
+  },
+]
 
 const router = new VueRouter({
-  routes
-});
+  routes,
+})
 
-export default router;
+export default router

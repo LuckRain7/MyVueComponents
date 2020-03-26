@@ -11,4 +11,8 @@ export default [
     title: '选项卡',
     to: '/ChooseCard',
   },
+  {
+    title: '弹出窗',
+    to: '/Pop-up',
+  },
 ]
