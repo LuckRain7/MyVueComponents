@@ -1,21 +1,18 @@
-# 基于 Vue 的一些小组件的集合
+# lucky-ui
 
-基于 Vue、Element-UI 封装的一些小组件
+> A Vue.js UI project
 
-## 侧边栏组件
+## Build Setup
 
-位置：`src\views\Sidebar\Sidebar.vue`
+``` bash
+# install dependencies
+npm install
 
-![Sidebar](/img/Sidebar.png)
+# serve with hot reload at localhost:8080
+npm run dev
 
-## 工具弹窗组件
+# build for production with minification
+npm run build
+```
 
-位置：`src\views\ToolBox\ToolBox.vue`
-
-![ToolBox](/img/ToolBox.png)
-
-## 选项卡组件
-
-位置：`src\views\ChooseCard\ChooseCard.vue`
-
-![ChooseCard](/img/ChooseCard.png)
+For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
