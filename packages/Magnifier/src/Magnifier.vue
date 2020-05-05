@@ -75,6 +75,7 @@ export default {
     );
     this.removeListener(thisMaDom.$abbre, 'mousemove', this.computedMark);
   },
+
   methods: {
     // 监听事件
     ListenerMouseenter(ev) {
