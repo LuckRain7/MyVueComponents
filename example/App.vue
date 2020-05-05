@@ -19,7 +19,7 @@
     </ul>
     <h2>Ecosystem</h2>
     <div class="app-item">
-      <h1>aa</h1>
+      <h1>电商网站放大镜效果组件</h1>
       <l-magnifier></l-magnifier>
     </div>
   </div>
@@ -27,10 +27,10 @@
 
 <script>
 export default {
-  name: "app",
+  name: 'app',
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
+      msg: 'Welcome to Your Vue.js App'
     };
   }
 };
@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
