@@ -1,18 +1,9 @@
 # lucky-ui
 
-> A Vue.js UI project
+> A Vue.js UI project ( developing )
 
-## Build Setup
+## 电商网站放大镜效果
 
-``` bash
-# install dependencies
-npm install
+TODO:
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+- 参数 props 化
