@@ -37,7 +37,10 @@ export default {
     thisMaStyle.abbreH = this.getOutHeight(thisMaDom.$abbre);
 
     console.log(thisMaDom.$abbre.offsetTop);
-    thisMaStyle.abbreOffset = this.getDomOffset(thisMaDom.$abbre); // 获取当前元素距离body的偏移
+
+    // ! A temporary solution ( 添加到 事件监听函数里边 )
+    // ! need to help ( the offsetTop value is error in the first set )
+    // thisMaStyle.abbreOffset = this.getDomOffset(thisMaDom.$abbre); // 获取当前元素距离body的偏移
     // {top: 373, left: 273, height: 200, width: 200}
     // {top: 559, left: 273, height: 200, width: 200}
 
@@ -55,20 +58,35 @@ export default {
     thisMaDom.$originImg.style.height = thisMaStyle.originImgH;
 
     // 添加事件绑定 鼠标进入和离开完成的事情
-    this.addListener(thisMaDom.$abbre, 'mouseenter', ev => {
-      thisMaDom.$mark.style.display = 'block';
-      thisMaDom.$origin.style.display = 'block';
-      this.computedMark(ev);
-    });
-    this.addListener(thisMaDom.$abbre, 'mouseleave', function(ev) {
-      thisMaDom.$mark.style.display = 'none';
-      thisMaDom.$origin.style.display = 'none';
-    });
+    this.addListener(thisMaDom.$abbre, 'mouseenter', this.ListenerMouseenter);
+    this.addListener(thisMaDom.$abbre, 'mouseleave', this.ListenerMouseleave);
     this.addListener(thisMaDom.$abbre, 'mousemove', this.computedMark);
   },
-  beforeDestroy() {},
-
+  beforeDestroy() {
+    this.removeListener(
+      thisMaDom.$abbre,
+      'mouseenter',
+      this.ListenerMouseenter
+    );
+    this.removeListener(
+      thisMaDom.$abbre,
+      'mouseleave',
+      this.ListenerMouseleave
+    );
+    this.removeListener(thisMaDom.$abbre, 'mousemove', this.computedMark);
+  },
   methods: {
+    // 监听事件
+    ListenerMouseenter(ev) {
+      thisMaDom.$mark.style.display = 'block';
+      thisMaDom.$origin.style.display = 'block';
+      thisMaStyle.abbreOffset = this.getDomOffset(thisMaDom.$abbre);
+      this.computedMark(ev);
+    },
+    ListenerMouseleave() {
+      thisMaDom.$mark.style.display = 'none';
+      thisMaDom.$origin.style.display = 'none';
+    },
     // 计算Mark盒子的位置 和控制大图的移动
     computedMark(ev) {
       // 鼠标处于盒子中心
@@ -129,8 +147,6 @@ export default {
     },
     getDomOffset(_dom) {
       const dom = _dom;
-      console.dir(dom);
-      console.dir(_dom);
       return {
         top: dom.offsetTop,
         left: dom.offsetLeft,
@@ -157,6 +173,16 @@ export default {
         target.attachEvent('on' + type, handler);
       } else {
         target['on' + type] = handler;
+      }
+    },
+    // 删除事件监听
+    removeListener(target, type, handler) {
+      if (target.addEventListener) {
+        target.removeEventListener(type, handler, false);
+      } else if (target.attachEvent) {
+        target.detachEvent('on' + type, handler);
+      } else {
+        target['on' + type] = null;
       }
     }
   }
