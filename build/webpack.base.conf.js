@@ -1,13 +1,19 @@
+/*
+ *  Description: 存放 dev 和 prod 通用配置
+ *  Author: LuckRain7
+ *  Date: 2020-05-14 12:08:35
+ */
+
 var path = require('path');
-var webpack = require('webpack');
+// var webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './example/main.js',
+  entry: path.resolve(__dirname, '../example/main.js'),
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'js/[name].[hash].js'
   },
   module: {
     rules: [
@@ -62,7 +68,7 @@ module.exports = {
             }
           },
           {
-            loader: path.resolve(__dirname, './build/md-loader/index.js')
+            loader: path.resolve(__dirname, './md-loader/index.js')
           }
         ]
       }
@@ -82,27 +88,10 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map',
-  plugins: [new VueLoaderPlugin()]
-};
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map';
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
+  plugins: [
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, '../example/index.html')
     })
-  ]);
-}
+  ]
+};
