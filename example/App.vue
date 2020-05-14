@@ -5,68 +5,28 @@
  -->
 <template>
   <div id="app">
-    <img src="./assets/logo.png" />
-    <l-button>111</l-button>
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank">Community Chat</a>
-      </li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <div class="app-item">
-      <h1>电商网站放大镜效果组件</h1>
-      <l-magnifier></l-magnifier>
-    </div>
+    <Header></Header>
+    <hr style="height:1px;border:none;border-top:1px solid #dcdfe6;" />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Header from './components/Header.vue';
 export default {
   name: 'app',
   data() {
     return {
       msg: 'Welcome to Your Vue.js App'
     };
-  }
+  },
+  components: { Header }
 };
 </script>
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-.app-item {
-  width: 100%;
-  height: 400px;
-  background-color: #42b983;
-}
-
-h1,
-h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 </style>
