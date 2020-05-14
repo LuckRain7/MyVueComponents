@@ -2,8 +2,16 @@
 
 > A Vue.js UI project ( developing )
 
-## 电商网站放大镜效果
+## TODO:
 
-TODO:
+**主页建设**
+
+- [x] Header
+
+- [ ] Main
+
+- [ ] Footer
+
+**电商网站放大镜效果**
 
 - 参数 props 化
