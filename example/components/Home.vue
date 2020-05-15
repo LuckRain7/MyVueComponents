@@ -4,26 +4,30 @@
  * @Date: 2020-05-14 13:19:26
  -->
 <template>
-  <div class="home">
-    <!-- logo title -->
-    <div class="home-logo">
-      <div class="title">
-        <h1>LuckRain7 制作的 Vue 组件库</h1>
-        <h2>收录一些自己制作的 Vue 组件</h2>
+  <div>
+    <div class="home">
+      <!-- logo title -->
+      <div class="home-logo">
+        <div class="title">
+          <h1>LuckRain7 制作的 Vue 组件库</h1>
+          <h2>收录一些自己制作的 Vue 组件</h2>
+        </div>
+        <img src="../assets/home.svg" alt="" />
       </div>
-      <img src="../assets/home.svg" alt="" />
+      <!-- 介绍 -->
+      <div class="description">
+        <template v-for="(item, index) in descriptionData">
+          <home-card :key="index" :data="item"></home-card>
+        </template>
+      </div>
     </div>
-    <!-- 介绍 -->
-    <div class="description">
-      <template v-for="(item, index) in descriptionData">
-        <home-card :key="index" :data="item"></home-card>
-      </template>
-    </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import HomeCard from './HomeCard.vue';
+import Footer from './Footer.vue';
 export default {
   name: 'Home',
   data() {
@@ -53,7 +57,8 @@ export default {
     };
   },
   components: {
-    HomeCard
+    HomeCard,
+    Footer
   }
 };
 </script>

@@ -13,11 +13,12 @@
 
 <script>
 import Header from './components/Header.vue';
+
 export default {
   name: 'app',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Lucky-UI'
     };
   },
   components: { Header }
