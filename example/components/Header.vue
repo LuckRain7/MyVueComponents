@@ -46,7 +46,8 @@ export default {};
     span {
       margin: auto 17px;
       font-size: 16px;
-      color: #409eff;
+      color: rgb(2, 171, 233);
+      // color: #409eff;
       cursor: pointer;
     }
   }
