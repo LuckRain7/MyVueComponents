@@ -10,8 +10,13 @@ import store from './store';
 
 import Luckyui from '../packages/index';
 
-import './assets/css/reset.min.css'; // 重置样式
+import './assets/css/reset.css'; // 重置样式
+import './assets/css/md.css'; // md 样式文件
 import '../packages/theme-lucky/index.scss';
+
+import hljs from 'highlight.js';
+import 'highlight.js/styles/atom-one-light.css';
+Vue.prototype.hljs = hljs;
 
 Vue.use(Luckyui);
 

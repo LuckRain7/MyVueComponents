@@ -5,12 +5,21 @@
  -->
 <template>
   <div class="header">
-    <div class="logo"></div>
+    <div class="logo" @click="$router.push('/')"></div>
     <div class="func">
-      <span type="text">指南</span>
-      <span type="text">组件</span>
-      <span type="text">主题</span>
-      <span type="text">资源</span>
+      <span
+        type="text"
+        v-for="(item, index) in headerData"
+        :key="index"
+        @click="
+          () => {
+            $router.push(item.url);
+          }
+        "
+      >
+        {{ item.title }}
+      </span>
+
       <span type="text">|</span>
       <span type="text">版本：1.0.0</span>
     </div>
@@ -18,7 +27,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      headerData: [
+        { title: '指南', url: '/Guide' },
+        { title: '组件', url: '/Components' },
+        { title: '主题', url: '/Theme' },
+        { title: '资源', url: '/Source' }
+      ]
+    };
+  }
+};
 </script>
 
 <style lang="scss">
@@ -36,6 +56,7 @@ export default {};
     width: 364px;
     float: left;
     background: url(../assets/logo.png);
+    cursor: pointer;
   }
 
   .func {

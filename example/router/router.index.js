@@ -27,6 +27,22 @@ const routes = [
     name: 'Guide',
     component: r => require.ensure([], () => r(require('../pages/Guide.vue')))
   },
+  {
+    path: '/Theme',
+    name: 'Theme',
+    component: r => require.ensure([], () => r(require('../pages/Theme.vue')))
+  },
+  {
+    path: '/Source',
+    name: 'Source',
+    component: r => require.ensure([], () => r(require('../pages/Source.vue')))
+  },
+  {
+    path: '/Components',
+    name: 'Components',
+    component: r =>
+      require.ensure([], () => r(require('../pages/Components.vue')))
+  },
   ...docsRouter
 ];
 

@@ -85,3 +85,5 @@ build: 不同环境下 webpack 的配置。
 ├── static
 └── README.md
 ```
+
+highlight.js 语法高亮库

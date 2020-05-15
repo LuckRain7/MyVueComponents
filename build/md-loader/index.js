@@ -8,9 +8,9 @@ const md = require('./config');
 module.exports = function(source) {
   const content = md.render(source);
 
-  const startTag = '<!--element-demo:';
+  const startTag = '<!--lucky-demo:';
   const startTagLen = startTag.length;
-  const endTag = ':element-demo-->';
+  const endTag = ':lucky-demo-->';
   const endTagLen = endTag.length;
 
   let componenetsString = '';
@@ -23,13 +23,18 @@ module.exports = function(source) {
   while (commentStart !== -1 && commentEnd !== -1) {
     output.push(content.slice(start, commentStart));
 
-    const commentContent = content.slice(commentStart + startTagLen, commentEnd);
+    const commentContent = content.slice(
+      commentStart + startTagLen,
+      commentEnd
+    );
     const html = stripTemplate(commentContent);
     const script = stripScript(commentContent);
     let demoComponentContent = genInlineComponentText(html, script);
-    const demoComponentName = `element-demo${id}`;
+    const demoComponentName = `lucky-demo${id}`;
     output.push(`<template slot="source"><${demoComponentName} /></template>`);
-    componenetsString += `${JSON.stringify(demoComponentName)}: ${demoComponentContent},`;
+    componenetsString += `${JSON.stringify(
+      demoComponentName
+    )}: ${demoComponentContent},`;
 
     // 重新计算下一次的位置
     id++;
@@ -50,7 +55,8 @@ module.exports = function(source) {
         }
       }
     </script>`;
-  } else if (content.indexOf('<script>') === 0) { // 硬编码，有待改善
+  } else if (content.indexOf('<script>') === 0) {
+    // 硬编码，有待改善
     start = content.indexOf('</script>') + '</script>'.length;
     pageScript = content.slice(0, start);
   }
@@ -58,7 +64,7 @@ module.exports = function(source) {
   output.push(content.slice(start));
   return `
     <template>
-      <section class="content element-doc">
+      <section class="content lucky-doc">
         ${output.join('')}
       </section>
     </template>

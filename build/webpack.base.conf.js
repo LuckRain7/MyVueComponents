@@ -72,6 +72,15 @@ module.exports = {
           }
         ]
       }
+      // {
+      //   test: /\.md$/,
+      //   loader: 'vue-markdown-loader',
+      //   options: {
+      //     preset: 'default',
+      //     breaks: true,
+      //     preventExtract: true
+      //   }
+      // }
     ]
   },
   resolve: {

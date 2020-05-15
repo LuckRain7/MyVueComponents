@@ -12,6 +12,7 @@ color:#2b2b2b;
   font-family: Optima-Regular, Optima, PingFangTC-Light, PingFangSC-light,
     PingFangTC-light;
   letter-spacing: 2px;
+  /* 底部网格css */
   /* background-image: linear-gradient(
       90deg,
       rgba(50, 0, 0, 0.04) 3%,
@@ -37,14 +38,16 @@ color:#2b2b2b;
   color: #5e6d82;
   margin: 10px 0px;
   letter-spacing: 2px;
-  font-size: 14px;
-  word-spacing: 2px;
+  font-size: 15px;
+  word-spacing: 1px;
 }
 
 /* 一级标题 */
 .lucky-doc h1 {
   font-size: 30px;
+  margin: 30px auto;
   color: #40b8fa;
+  text-align: center;
 }
 
 /* 一级标题内容 */
@@ -66,6 +69,7 @@ color:#2b2b2b;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   color: #40b8fa;
+  margin-top: 50px;
 }
 
 /* 二级标题内容 */
@@ -190,13 +194,14 @@ color:#2b2b2b;
   * 左边缘颜色 border-left-color:black;
   * 背景色 background:gray;
   */
-.lucky-doc blockquote::before {
+/* 去掉引用的巨型标点 */
+/* .lucky-doc blockquote::before {
   content: '❝';
   color: RGBA(64, 184, 250, 0.5);
   font-size: 34px;
   line-height: 1;
   font-weight: 700;
-}
+} */
 
 .lucky-doc blockquote {
   text-size-adjust: 100%;
@@ -329,6 +334,10 @@ color:#2b2b2b;
 
 .lucky-doc pre code {
   letter-spacing: 0px;
+  font-size: 14px;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace,
+    monospace, courier, sans-serif;
+  border-radius: 4px;
 }
 
 /*
