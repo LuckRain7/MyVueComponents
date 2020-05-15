@@ -5,7 +5,8 @@
  */
 import Vue from 'vue';
 import App from './App.vue';
-import router from './router';
+import router from './router/router.index.js';
+import store from './store';
 
 import Luckyui from '../packages/index';
 
@@ -16,5 +17,6 @@ Vue.use(Luckyui);
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app');
