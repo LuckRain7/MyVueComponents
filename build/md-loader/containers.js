@@ -11,8 +11,10 @@ module.exports = md => {
         const description = m && m.length > 1 ? m[1] : '';
         const content = tokens[idx + 1].type === 'fence' ? tokens[idx + 1].content : '';
         return `<demo-block>
-        ${description ? `<div>${md.render(description)}</div>` : ''}
         <!--element-demo: ${content}:element-demo-->
+        ${content}
+        <div style="height:10px;"></div>
+        ${description ? `<div>${md.render(description)}</div>` : ''}
         `;
       }
       return '</demo-block>';
