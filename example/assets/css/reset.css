@@ -3,3 +3,11 @@ html {
   margin: 0;
   padding: 0;
 }
+
+.hljs {
+  letter-spacing: 0.5px;
+  line-height: 20px;
+  font-size: 14px;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace,
+    monospace, courier, sans-serif;
+}

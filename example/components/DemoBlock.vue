@@ -1,16 +1,18 @@
 <!--
  * @Description:  
  * @Author: LuckRain7
- * @Date: 2020-05-15 15:33:47
+ * @Date: 2020-05-16 20:37:32
 -->
 <template>
-  <div class="theme">
-    <h1>Developting...</h1>
+  <div class="demo-block">
+    <slot></slot>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'DemoBlock'
+};
 </script>
 
 <style></style>

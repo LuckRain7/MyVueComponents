@@ -5,12 +5,37 @@
 -->
 <template>
   <div class="source">
-    <h1>Source TODO</h1>
+    <markdown class="source-md"></markdown>
+    <div style="height:50px"></div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-export default {};
+import Markdown from './Source.md';
+import Footer from '../components/Footer.vue';
+export default {
+  name: 'Source',
+  components: {
+    Markdown,
+    Footer
+  },
+  mounted() {
+    this.$nextTick(() => {
+      let blocks = document.querySelectorAll('pre');
+      console.log(blocks);
+
+      blocks.forEach(block => {
+        this.hljs.highlightBlock(block);
+      });
+    });
+  }
+};
 </script>
 
-<style></style>
+<style lang="scss">
+.source-md {
+  width: 1000px;
+  margin: 10px auto;
+}
+</style>

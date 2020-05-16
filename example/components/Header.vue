@@ -45,6 +45,7 @@ export default {
 .header {
   height: 80px;
   width: 100%;
+  // position: fixed;
 
   div {
     height: 100%;

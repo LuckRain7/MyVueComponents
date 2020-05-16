@@ -6,15 +6,19 @@
 <template>
   <div class="guide">
     <markdown class="guide-md"></markdown>
+    <div style="height:50px"></div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Markdown from './Guide.md';
+import Footer from '../components/Footer.vue';
 export default {
   name: 'Guide',
   components: {
-    Markdown
+    Markdown,
+    Footer
   },
   mounted() {
     this.$nextTick(() => {

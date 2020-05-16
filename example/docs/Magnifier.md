@@ -6,11 +6,20 @@ npm install
 
 ## 使用
 
+```vue
+<template>
+  <l-magnifier></l-magnifier>
+</template>
+```
+
+## 效果展示：
+
 :::demo
 
-<div class="app-item">
-<h1>电商网站放大镜效果组件</h1>
-<l-magnifier></l-magnifier>
+<div class='item-app' style="width:100%;margin:0;">
+    <l-magnifier></l-magnifier>
 </div>
+
+<div></div>
 
 :::

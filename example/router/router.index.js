@@ -41,9 +41,9 @@ const routes = [
     path: '/Components',
     name: 'Components',
     component: r =>
-      require.ensure([], () => r(require('../pages/Components.vue')))
-  },
-  ...docsRouter
+      require.ensure([], () => r(require('../pages/Components.vue'))),
+    children: [...docsRouter]
+  }
 ];
 
 const router = new VueRouter({
