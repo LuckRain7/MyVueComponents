@@ -33,8 +33,8 @@ export default {
     thisMaDom.$originImg = thisMaDom.$origin.querySelector('img'); //
 
     // 获取元素宽高并进行计算
-    thisMaStyle.abbreW = this.getOutWidth(thisMaDom.$abbre);
-    thisMaStyle.abbreH = this.getOutHeight(thisMaDom.$abbre);
+    thisMaStyle.aabbreWidth = this.getOutWidth(thisMaDom.$abbre);
+    thisMaStyle.abbreHeight = this.getOutHeight(thisMaDom.$abbre);
 
     console.log(thisMaDom.$abbre.offsetTop);
 
@@ -44,14 +44,14 @@ export default {
     // {top: 373, left: 273, height: 200, width: 200}
     // {top: 559, left: 273, height: 200, width: 200}
 
-    thisMaStyle.markW = this.getOutHeight(thisMaDom.$mark);
+    thisMaStyle.markW = this.getOutWidth(thisMaDom.$mark); // 遮罩层宽度
     thisMaStyle.markH = this.getOutHeight(thisMaDom.$mark);
-    thisMaStyle.originW = this.getOutHeight(thisMaDom.$origin);
+    thisMaStyle.originW = this.getOutWidth(thisMaDom.$origin);
     thisMaStyle.originH = this.getOutHeight(thisMaDom.$origin);
     thisMaStyle.originImgW =
-      (thisMaStyle.abbreW / thisMaStyle.markW) * thisMaStyle.originW;
+      (thisMaStyle.aabbreWidth / thisMaStyle.markW) * thisMaStyle.originW;
     thisMaStyle.originImgH =
-      (thisMaStyle.abbreH / thisMaStyle.markH) * thisMaStyle.originH;
+      (thisMaStyle.abbreHeight / thisMaStyle.markH) * thisMaStyle.originH;
 
     // 设置放大图片的宽高
     thisMaDom.$originImg.style.width = thisMaStyle.originImgW;
@@ -92,33 +92,41 @@ export default {
     computedMark(ev) {
       // 鼠标处于盒子中心
       // mark 的left = 鼠标距离窗口的x轴 - abbre 距离body的左偏移 - mark宽度的一半
-      let markL =
+      let markLeft =
         ev.clientX - thisMaStyle.abbreOffset.left - thisMaStyle.markW / 2;
 
-      let markT =
+      let markTop =
         ev.clientY -
         thisMaStyle.abbreOffset.top -
         thisMaStyle.markH / 2 +
         this.scrollTop(); // 附带滚动高度
 
+      // 遮罩层移动范围限制
       let minL = 0;
       let minT = 0;
-      let maxL = thisMaStyle.abbreW - thisMaStyle.markW;
-      let maxT = thisMaStyle.abbreH - thisMaStyle.markH;
+      let maxL = thisMaStyle.aabbreWidth - thisMaStyle.markW;
+      let maxT = thisMaStyle.abbreHeight - thisMaStyle.markH;
 
-      markL = markL < minL ? minL : markL > maxL ? maxL : markL;
-      markT = markT < minT ? minT : markT > maxT ? maxT : markT;
+      markLeft = markLeft < minL ? minL : markLeft > maxL ? maxL : markLeft;
+      markTop = markTop < minT ? minT : markTop > maxT ? maxT : markTop;
 
       // 移动遮罩
-      thisMaDom.$mark.style.top = markT + 'px';
-      thisMaDom.$mark.style.left = markL + 'px';
+      thisMaDom.$mark.style.top = markTop + 'px';
+      thisMaDom.$mark.style.left = markLeft + 'px';
+
+      console.log(thisMaStyle.originImgH);
+      console.log(-markTop);
+      console.log(thisMaStyle.abbreHeight);
 
       // 大图移动的距离
       // mark移动的距离 / abbre的大小 = 大图移动的距离 / 大图的大小
+      // !error +20 暂时解决 在哪计算错误???
       thisMaDom.$originImg.style.top =
-        (-markT / thisMaStyle.abbreH) * thisMaStyle.originImgH + 'px';
+        (-markTop / thisMaStyle.abbreHeight) * thisMaStyle.originImgH -
+        20 +
+        'px';
       thisMaDom.$originImg.style.left =
-        (-markL / thisMaStyle.abbreW) * thisMaStyle.originImgW + 'px';
+        (-markLeft / thisMaStyle.aabbreWidth) * thisMaStyle.originImgW + 'px';
     },
     // 获取元素外宽度
     getOutWidth(_dom) {
@@ -206,6 +214,7 @@ export default {
     img {
       width: 100%;
       height: 100%;
+      margin: 0;
     }
 
     .mark {
