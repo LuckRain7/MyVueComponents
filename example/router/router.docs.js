@@ -5,6 +5,12 @@
  */
 const docsRouter = [
   {
+    path: '/Components',
+    name: 'index',
+    title: '说明',
+    component: r => require.ensure([], () => r(require('../docs/index.md')))
+  },
+  {
     path: '/Components/Magnifier',
     name: 'Magnifier',
     title: 'Magnifier 放大镜组件',
