@@ -1,8 +1,15 @@
 # Button 按钮
 
+## 按需引入
+
+```javascript
+import Button from 'lucky-ui/packages/Button';
+Vue.use(Button);
+```
+
 ## 基础用法
 
-:::demo 
+:::demo
 <l-button>默认</l-button>
 <l-button type="primary">主要按钮</l-button>
 <l-button type="success">成功按钮</l-button>

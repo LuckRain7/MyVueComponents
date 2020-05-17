@@ -1,8 +1,11 @@
 # 放大镜效果组件
 
-## 安装
+## 按需引入
 
-npm install
+```javascript
+import Magnifier from 'lucky-ui/packages/Magnifier';
+Vue.use(Magnifier);
+```
 
 ## 使用
 

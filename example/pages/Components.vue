@@ -82,9 +82,6 @@ export default {
   },
   watch: {
     $route(to, form) {
-      console.log(to);
-      console.log(form);
-
       if (to.path === form.path) return;
       this.$nextTick(() => {
         this.height();

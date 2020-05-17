@@ -20,10 +20,10 @@ export default {
     Markdown,
     Footer
   },
+
   mounted() {
     this.$nextTick(() => {
       let blocks = document.querySelectorAll('pre');
-      console.log(blocks);
 
       blocks.forEach(block => {
         this.hljs.highlightBlock(block);

@@ -46,7 +46,6 @@ export default {
     thisMaStyle.aabbreWidth = this.getOutWidth(thisMaDom.$abbre);
     thisMaStyle.abbreHeight = this.getOutHeight(thisMaDom.$abbre);
 
-    console.log(thisMaDom.$abbre.offsetTop);
 
     // ! A temporary solution ( 添加到 事件监听函数里边 )
     // ! need to help ( the offsetTop value is error in the first set )
@@ -123,10 +122,6 @@ export default {
       // 移动遮罩
       thisMaDom.$mark.style.top = markTop + 'px';
       thisMaDom.$mark.style.left = markLeft + 'px';
-
-      console.log(thisMaStyle.originImgH);
-      console.log(-markTop);
-      console.log(thisMaStyle.abbreHeight);
 
       // 大图移动的距离
       // mark移动的距离 / abbre的大小 = 大图移动的距离 / 大图的大小

@@ -11,16 +11,22 @@ const docsRouter = [
     component: r => require.ensure([], () => r(require('../docs/install.md')))
   },
   {
-    path: '/Components/Magnifier',
-    name: 'Magnifier',
-    title: 'Magnifier 放大镜组件',
-    component: r => require.ensure([], () => r(require('../docs/Magnifier.md')))
-  },
-  {
     path: '/Components/Button',
     name: 'Button',
     title: 'Button 按钮',
     component: r => require.ensure([], () => r(require('../docs/Button.md')))
+  },
+  {
+    path: '/Components/Tree',
+    name: 'Tree',
+    title: 'Tree 树型组件',
+    component: r => require.ensure([], () => r(require('../docs/Tree.md')))
+  },
+  {
+    path: '/Components/Magnifier',
+    name: 'Magnifier',
+    title: 'Magnifier 放大镜组件',
+    component: r => require.ensure([], () => r(require('../docs/Magnifier.md')))
   }
 ];
 
