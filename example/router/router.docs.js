@@ -6,9 +6,9 @@
 const docsRouter = [
   {
     path: '/Components',
-    name: 'index',
-    title: '说明',
-    component: r => require.ensure([], () => r(require('../docs/index.md')))
+    name: 'install',
+    title: '安装',
+    component: r => require.ensure([], () => r(require('../docs/install.md')))
   },
   {
     path: '/Components/Magnifier',

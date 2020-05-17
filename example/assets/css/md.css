@@ -332,9 +332,10 @@ color:#2b2b2b;
   border-radius: 2px;
 }
 
+/* 代码块样式 */
 .lucky-doc pre code {
   letter-spacing: 0px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace,
     monospace, courier, sans-serif;
   border-radius: 4px;
