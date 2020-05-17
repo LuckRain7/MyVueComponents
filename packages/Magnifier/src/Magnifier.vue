@@ -10,12 +10,12 @@
   <section class="magnifier clearfix">
     <!-- 左侧缩略图 -->
     <div class="abbre">
-      <img src="../../../example/assets/images/1.jpg" alt="" />
+      <img :src="imgMinUrl" alt="" />
       <div class="mark"></div>
     </div>
     <!-- 右侧原图(大图) -->
     <div class="origin">
-      <img src="../../../example/assets/images/2.jpg" alt="" />
+      <img :src="imgMaxUrl" alt="" />
     </div>
   </section>
 </template>
@@ -25,6 +25,16 @@ let thisMaStyle = {};
 let thisMaDom = {};
 export default {
   name: 'LMagnifier',
+  props: {
+    imgMinUrl: {
+      type: String,
+      default: '/public/images/1.jpg'
+    },
+    imgMaxUrl: {
+      type: String,
+      default: '/public/images/2.jpg'
+    }
+  },
   mounted() {
     // 首先获取元素
     thisMaDom.$abbre = document.querySelector('.abbre'); // 缩略图

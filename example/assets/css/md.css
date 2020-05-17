@@ -351,6 +351,7 @@ color:#2b2b2b;
 .lucky-doc table tr td {
   font-size: 14px;
   color: #595959;
+  letter-spacing: 0px;
 }
 
 .lucky-doc .footnotes {
@@ -434,4 +435,41 @@ color:#2b2b2b;
   display: inline-block;
   width: 100%;
   margin-bottom: 0;
+}
+
+/* 表格样式
+ */
+.lucky-doc table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  display: block;
+  overflow-x: auto;
+  font-size: 16px !important;
+}
+
+.lucky-doc table thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.lucky-doc tr {
+  border-top: 1px solid #dfe2e5;
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+.lucky-doc tr th {
+  border: 1px solid #dfe2e5;
+  padding: 1em 1em;
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: -internal-center;
+}
+
+.lucky-doc tr td {
+  border: 1px solid #dfe2e5;
+  padding: 1em 1em;
+  text-align: center;
 }

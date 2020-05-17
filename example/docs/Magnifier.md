@@ -8,9 +8,19 @@ npm install
 
 ```vue
 <template>
-  <l-magnifier></l-magnifier>
+  <l-magnifier
+    :imgMaxUrl="/public/images/2.jpg"
+    :imgMinUrl="/public/images/1.jpg"
+  ></l-magnifier>
 </template>
 ```
+
+## 参数
+
+| 参数         | 说明     | 类型   | 可选值 | 默认值 |
+| ------------ | -------- | ------ | ------ | ------ |
+| \* imgMinUrl | 小图地址 | String | -      | -      |
+| \* imgMaxUrl | 大图地址 | String | -      | -      |
 
 ## 效果展示：
 
@@ -19,7 +29,5 @@ npm install
 <div class='item-app' style="width:100%;margin:0;">
     <l-magnifier></l-magnifier>
 </div>
-
-<div></div>
 
 :::

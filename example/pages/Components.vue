@@ -21,6 +21,7 @@
       </ul>
     </div>
     <div class="right-components"><router-view></router-view></div>
+    <div style="height:100px;width:100%;float: left;"></div>
   </div>
 </template>
 
