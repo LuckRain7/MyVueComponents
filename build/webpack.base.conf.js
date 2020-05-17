@@ -8,6 +8,8 @@ var path = require('path');
 // var webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// 拷贝插件 用于public 静态资源拷贝
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, '../example/main.js'),
@@ -101,6 +103,15 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../example/index.html')
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../example/public'),
+          to: path.resolve(__dirname, '../dist/public')
+          // ignore: ['.*']
+        }
+      ]
     })
   ]
 };
