@@ -10,7 +10,7 @@
       <em :class="['icon', item.open ? 'open' : '']"></em>
       <!-- level level${this.count} -->
       <ul
-        :class="['level', 'level2']"
+        :class="['level', 'level1']"
         :style="{ display: item.open ? 'block' : 'none' }"
       >
         <template v-for="(child, ind) in item.children">
